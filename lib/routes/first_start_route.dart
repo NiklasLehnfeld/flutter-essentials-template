@@ -1,44 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app_naturopath/localization/app_localizations.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter_template/model/user.dart';
 
 class FirstStartRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        constraints: BoxConstraints.expand(),
-        color: Theme.of(context).primaryColor,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Expanded(
-              child: Center(
-                child: Theme.of(context)
-                    .textTheme
-                    .headline3
-                    .withLabel(context, 'sign_in'),
-              ),
-            ),
-            Expanded(
-              child: Center(
-                child: Theme.of(context)
-                    .textTheme
-                    .headline3
-                    .withLabel(context, 'sign_up'),
-              ),
-            ),
-          ],
-        ),
+      body: Consumer<User>(
+        builder: (context, user, child) => Container(
+            constraints: BoxConstraints.expand(),
+            color: Theme.of(context).primaryColor,
+            child: Center(
+                child: FaIcon(
+              user.isAwesome
+                  ? FontAwesomeIcons.thumbsUp
+                  : FontAwesomeIcons.thumbsDown,
+              size: 200,
+            ))),
       ),
-    );
-  }
-}
-
-extension TextStyleExt on TextStyle {
-  Widget withLabel(BuildContext context, String key) {
-    return Text(
-      AppLocalizations.of(context).translate(key),
-      style: this,
     );
   }
 }
