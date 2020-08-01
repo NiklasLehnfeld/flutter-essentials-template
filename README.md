@@ -1,6 +1,6 @@
 # Flutter Project template
 
-A Flutter project template containing basic implementaion for:
+A Flutter project template containing basic implementation for:
     
 - localization https://flutter.dev/docs/development/accessibility-and-localization/internationalization
     
