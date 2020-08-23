@@ -7,3 +7,5 @@ A Flutter project template containing basic implementation for:
 - provider https://flutter.dev/docs/development/data-and-backend/state-mgmt/simple
     
 - awesome fonts https://pub.dev/packages/font_awesome_flutter 
+
+- pedantic dart lint rules https://medium.com/podiihq/setting-up-lint-rules-in-dart-flutter-1ebbed0418a6
